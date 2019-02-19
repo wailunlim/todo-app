@@ -26,4 +26,10 @@ class TodoTest < ActiveSupport::TestCase
     @todo.save
     assert_equal mixed_case.downcase, @todo.reload.tag
   end
+
+  test "completed status should be set false by default" do
+    @todo.completed = nil
+    @todo.save
+    assert_not @todo.reload.completed
+  end
 end
