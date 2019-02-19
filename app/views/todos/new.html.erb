@@ -1,2 +1,14 @@
 <h1>Create Todo</h1>
-<p>Page to create a todo</p>
+
+<%= form_for(@todo) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :task %>
+  <%= f.text_area :task %>
+
+  <%= f.label :tag %>
+  <%= f.text_field :tag %>
+
+  <%= f.submit "Create Todo" %>
+<% end %>
