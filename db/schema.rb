@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190219022337) do
+ActiveRecord::Schema.define(version: 20190219060741) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20190219022337) do
     t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tag"], name: "index_todos_on_tag"
   end
 
 end
