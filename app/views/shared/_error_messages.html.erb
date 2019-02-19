@@ -1,0 +1,7 @@
+<div>
+  <% if @todo.errors.any? %>
+    <% @todo.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+  <% end  %>
+</div>
