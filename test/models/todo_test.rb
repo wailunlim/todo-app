@@ -19,4 +19,11 @@ class TodoTest < ActiveSupport::TestCase
     @todo.title = "x" * 100
     assert_not @todo.valid?
   end
+
+  test "tags is saved as lowercase" do
+    mixed_case = "MiXeD"
+    @todo.tag = mixed_case
+    @todo.save
+    assert_equal mixed_case.downcase, @todo.reload.tag
+  end
 end
