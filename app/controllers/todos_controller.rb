@@ -10,7 +10,7 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(todo_params)
     if @todo.save
-      # Successful save, handle this here
+      redirect_to @todo
     else
       render 'new'
     end
