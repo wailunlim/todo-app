@@ -1,6 +1,6 @@
 <h1>Create Todo</h1>
 
-<%= form_for(@todo) do |f| %>
+<%= form_for(@todo, url: todos_path) do |f| %>
   <%= render 'shared/error_messages' %>
   <%= f.label :title %>
   <%= f.text_field :title %>
