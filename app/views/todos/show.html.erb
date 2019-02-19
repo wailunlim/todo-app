@@ -3,3 +3,5 @@
 <div><%= @todo.task %></div>
 <div><%= @todo.tag %></div>
 <div><%= @todo.completed %></div>
+<div><%= link_to "delete", @todo, method: :delete,
+  data: {confirm: "Are you sure?"} %></div>
