@@ -1,0 +1,11 @@
+<h1>All Todos</h1>
+<ul>
+  <% @todos.each do |todo| %>
+    <li>
+      <div><%= link_to todo.title, todo %></div>
+      <div><%= todo.task %></div>
+      <div><%= todo.tag %></div>
+      <div><%= todo.completed %></div>
+    </li>
+  <% end %>
+</ul>
