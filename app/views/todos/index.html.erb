@@ -1,17 +1,16 @@
 <h1>All Todos</h1>
-<% @todos.each do |todo| %>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title"><%= link_to todo.title, todo %></h5>
-      <p class="card-text"><%= todo.task %></p>
+<div class = "card-columns">
+  <% @todos.each do |todo| %>
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to todo.title, todo %></h5>
+        <p class="card-text"><%= todo.task %></p>
+        <span class="card-text">Tags: <%= todo.tag %></span>
+        <span class="card-text">Completed?: <%= todo.completed %></span>
+        <div><%= link_to "delete", @todo, method: :delete,
+          data: { confirm: "Are you sure?" },
+          class: "btn btn-danger" %></div>
+      </div>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Tags: <%= todo.tag %></li>
-      <li class="list-group-item">Completed?: <%= todo.completed %></li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
