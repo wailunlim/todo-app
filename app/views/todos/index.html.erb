@@ -10,7 +10,7 @@
           <h5 class="card-title"><%= link_to todo.title, todo %></h5>
           <p class="card-text"><%= todo.task %></p>
           <span class="card-text">Tags: <%= todo.tag %></span>
-          <div><%= link_to "delete", @todo, method: :delete,
+          <div><%= link_to "delete", todo, method: :delete,
             data: { confirm: "Are you sure?" },
             class: "btn btn-danger" %></div>
         </div>
