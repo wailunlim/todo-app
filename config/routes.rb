@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'todos/*tags', to: 'todos#index', as: :tag
+  get 'todos/search/*tags', to: 'todos#index', as: :tag
   get 'todos/new'
   get 'todos/show'
   post 'todos/create'
