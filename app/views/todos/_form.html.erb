@@ -1,13 +1,25 @@
-<%= form_for(@todo) do |f| %>
-  <%= render 'shared/error_messages' %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <%= form_for(@todo) do |f| %>
+      <%= render 'shared/error_messages' %>
+      <div class="form-div">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
 
-  <%= f.label :task %>
-  <%= f.text_area :task %>
+      <div class="form-div">
+        <%= f.label :task %>
+        <%= f.text_area :task, size: "50x20", class: "form-control" %>
+      </div>
 
-  <%= f.label :tag %>
-  <%= f.text_field :tag %>
+      <div class="form-div">
+        <%= f.label :tag %>
+        <%= f.text_field :tag, class: "form-control" %>
+      </div>
 
-  <%= f.submit yield(:button_text) %>
-<% end %>
+      <div class="form-div">
+        <%= f.submit yield(:button_text), class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    <% end %>
+  </div>
+</div>
