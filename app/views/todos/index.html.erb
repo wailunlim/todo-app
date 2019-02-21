@@ -1,7 +1,7 @@
 <h1>All Todos</h1>
 <div class="card-columns">
   <% @todos.each do |todo| %>
-    <% if todo.completed %>
+    <% if todo.completed? %>
       <div class="card text-center bg-success">
     <% else %>
       <div class="card text-center bg-warning">
@@ -13,6 +13,9 @@
           <div><%= link_to "delete", todo, method: :delete,
             data: { confirm: "Are you sure?" },
             class: "btn btn-danger" %></div>
+          <div><%= link_to "complete", mark_complete_todo_path(todo),
+            method: :get,
+            class: "btn btn-success" %></div>
         </div>
       </div>
   <% end %>
