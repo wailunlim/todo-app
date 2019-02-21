@@ -11,8 +11,7 @@ class EditTodoTest < ActionDispatch::IntegrationTest
     assert_template 'todos/edit'
     patch todo_path(@todo), params: {
       todo: { title: "test",
-              task: "  ",
-              tag: "testing"}
+              task: "  " }
     }
     assert_template 'todos/edit'
   end

@@ -6,8 +6,7 @@ class AddTodoTest < ActionDispatch::IntegrationTest
     get new_todo_path
     assert_no_difference 'Todo.count' do
       post todos_path, params: { todo: { title: "Test",
-                                         task: "  ",
-                                         tag: "test" } }
+                                         task: "  " } }
     end
   end
 end

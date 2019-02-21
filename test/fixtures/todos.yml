@@ -3,11 +3,9 @@
 one:
   title: MyString
   task: MyString
-  tag: MyString
   completed?: false
 
 two:
   title: MyString
   task: MyString
-  tag: MyString
   completed?: false
