@@ -17,7 +17,11 @@ class TodosController < ApplicationController
   end
 
   def index
-    @todos = Todo.all
+    if params[:tags].nil?
+      @todos = Todo.all
+    else
+      @todos = Todo.tagged_with(params[:tags])
+    end
   end
 
   def edit
