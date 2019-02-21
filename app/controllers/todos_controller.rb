@@ -38,6 +38,12 @@ class TodosController < ApplicationController
     redirect_to todos_url
   end
 
+  def mark_complete
+    if Todo.find(params[:id]).update_attribute(:completed?, true)
+      redirect_to todos_url
+    end
+  end
+
   private
 
     def todo_params
