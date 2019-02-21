@@ -10,21 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190219060741) do
-
-  create_table "tasks", force: :cascade do |t|
-    t.string "title"
-    t.string "task"
-    t.string "tag"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20190221080137) do
 
   create_table "todos", force: :cascade do |t|
     t.string "title"
     t.string "task"
     t.string "tag"
-    t.boolean "completed"
+    t.boolean "completed?", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tag"], name: "index_todos_on_tag"
