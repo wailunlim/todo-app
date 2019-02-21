@@ -3,7 +3,7 @@ require 'test_helper'
 class TodoTest < ActiveSupport::TestCase
 
   def setup
-    @todo = Todo.new(title: "Example title", task: "Example task", tag: "example", completed: false)
+    @todo = Todo.new(title: "Example title", task: "Example task", tag: "example", completed?: false)
   end
 
   test "should be valid" do
@@ -25,11 +25,5 @@ class TodoTest < ActiveSupport::TestCase
     @todo.tag = mixed_case
     @todo.save
     assert_equal mixed_case.downcase, @todo.reload.tag
-  end
-
-  test "completed status should be set false by default" do
-    @todo.completed = nil
-    @todo.save
-    assert_not @todo.reload.completed
   end
 end
