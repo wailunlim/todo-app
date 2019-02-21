@@ -9,6 +9,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= link_to todo.title, edit_todo_path(todo) %></h5>
           <p class="card-text"><%= todo.task %></p>
+          <div class="card-text">Tags: <%= todo.tag_list.map { |tag| "#{tag} " } %></div>
           <div>
             <span><%= link_to "delete", todo, method: :delete,
             data: { confirm: "Are you sure?" },
