@@ -17,9 +17,13 @@
             data: { confirm: "Are you sure?" },
             class: "btn btn-danger" %></span>
             <% unless todo.completed? %>
-              <span><%= link_to "complete", mark_complete_todo_path(todo),
+              <span><%= link_to "mark complete", toggle_complete_todo_path(todo),
                 method: :get,
                 class: "btn btn-success" %></span>
+            <% else %>
+              <span><%= link_to "mark incomplete", toggle_complete_todo_path(todo),
+                method: :get,
+                class: "btn btn-warning" %></span>
             <% end %>
           </div>
         </div>
