@@ -1,4 +1,14 @@
-<h1>All Todos</h1>
+<div class="text-center"><h1><%= link_to "Todos App", todos_url %></h1></div>
+<div>
+  <div class="text-center">
+    <p>All tags:</p>
+    <p>
+      <% for tag in ActsAsTaggableOn::Tag.all %>
+        <%= link_to tag, tag_path(tag.name) %>
+      <% end %>
+    </p>
+  </div>
+</div>
 <div class="card-columns">
   <% @todos.each do |todo| %>
     <% if todo.completed? %>
