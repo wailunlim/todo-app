@@ -14,7 +14,8 @@
 
       <div class="form-div">
         <%= f.label :tag_list %>
-        <%= f.text_field :tag_list, class: "form-control" %>
+        <%= f.text_field :tag_list, class: "form-control", value: "#{@todo.tag_list.join(", ") }" %>
+        <small class="form-text text-muted">Do ensure your tags are separated by commas</small>
       </div>
 
       <div class="form-div">
