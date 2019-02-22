@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'todos/index'
   resources :todos do
     member do
-      get 'mark_complete'
+      get 'toggle_complete'
     end
   end
 end
