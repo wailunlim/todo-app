@@ -17,6 +17,7 @@ class TodosController < ApplicationController
   end
 
   def index
+    ActsAsTaggableOn::Tag.find_each { |tag| tag.destroy if tag.taggings.count == 0 }
     if params[:tags].nil?
       @todos = Todo.all
     else
