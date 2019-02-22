@@ -2,9 +2,9 @@
 <div class="card-columns">
   <% @todos.each do |todo| %>
     <% if todo.completed? %>
-      <div class="card text-center bg-success">
+      <div class="card text-center" id="complete-card">
     <% else %>
-      <div class="card text-center bg-warning">
+      <div class="card text-center" id="incomplete-card">
     <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= link_to todo.title, edit_todo_path(todo) %></h5>
