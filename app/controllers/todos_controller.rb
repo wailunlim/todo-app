@@ -42,8 +42,9 @@ class TodosController < ApplicationController
     redirect_to todos_url
   end
 
-  def mark_complete
-    if Todo.find(params[:id]).update_attribute(:completed?, true)
+  def toggle_complete
+    @todo = Todo.find(params[:id])
+    if @todo.update_attribute(:completed?, !@todo.completed?)
       redirect_to todos_url
     end
   end
