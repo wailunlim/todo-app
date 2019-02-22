@@ -3,10 +3,6 @@ class TodosController < ApplicationController
     @todo = Todo.new
   end
   
-  def show
-    @todo = Todo.find(params[:id])
-  end
-
   def create
     @todo = Todo.new(todo_params)
     if @todo.save
@@ -32,7 +28,7 @@ class TodosController < ApplicationController
   def update
     @todo = Todo.find(params[:id])
     if @todo.update_attributes todo_params
-      redirect_to @todo
+      redirect_to todos_url
     else
       render 'edit'
     end
