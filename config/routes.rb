@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'todos#index'
   get 'todos/search/*tags', to: 'todos#index', as: :tag
   get 'todos/new'
   get 'todos/show'
