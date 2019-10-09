@@ -1,6 +1,6 @@
 # README
 
-By: Lim Wai Lun (A0167102R)
+By: Wai Lun 😇
 
 To get started with the app, clone the repo and then install the needed gems:
 
